@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: m07-web
+  labels:
+    app: m07-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: m07-web
+  template:
+    metadata:
+      labels:
+        app: m07-web
+    spec:
+      containers:
+        - name: m07-web
+          image: docker.io/library/m07-web:v1
+          imagePullPolicy: Never
+          ports:
+            - name: http
+              containerPort: 80
