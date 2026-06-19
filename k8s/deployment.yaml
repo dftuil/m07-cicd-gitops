@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: m07-web
-          image: docker.io/library/m07-web:v1
-          imagePullPolicy: Never
+          image: ghcr.io/dftuil/m07-web:latest
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 80
